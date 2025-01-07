@@ -245,7 +245,7 @@
       <value>Физическое лицо</value>
     </synonym>
     <type>
-      <types>DefinedType.ФизическоеЛицо</types>
+      <types>CatalogRef.ВКМ_ФизическиеЛица</types>
     </type>
     <toolTip>
       <key>ru</key>

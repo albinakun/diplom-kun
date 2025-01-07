@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="700f8957-2c58-459b-ba58-ef32172e5974">
+  <producedTypes>
+    <objectType typeId="8264369b-a7d7-4e56-b42e-69fb493bf156" valueTypeId="058e8003-4dcc-40e8-8676-25913a4a244b"/>
+    <refType typeId="c5a9feee-ac7c-478e-ab39-e4527f526574" valueTypeId="13a5e84f-35e7-434c-b8ac-035c29a32550"/>
+    <selectionType typeId="7a6bad93-f2b3-4abf-93af-2c4769a9d544" valueTypeId="8f7dcaf0-4141-4f84-aace-82b1740c38c3"/>
+    <listType typeId="c16a3912-6bf1-4d0e-95f0-8774f4772dc1" valueTypeId="5e00e953-a261-45ed-9789-b0eea9cd9a79"/>
+    <managerType typeId="7f27030c-f3ca-4d82-b4e5-3f2fa486ffaa" valueTypeId="fdeeda86-3ec5-45b4-8ca0-f05e564cfd0c"/>
+  </producedTypes>
+  <name>ВКМ_ФизическиеЛица</name>
+  <synonym>
+    <key>ru</key>
+    <value>Физические лица</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ВКМ_ФизическиеЛица.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ВКМ_ФизическиеЛица.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Физическое лицо</value>
+  </objectPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="c32d3bca-a0fd-4eb7-86ec-b96d5a89a428">
+    <name>Должность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВКМ_Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>
