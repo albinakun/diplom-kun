@@ -43,10 +43,6 @@
     <headerHorizontalAlign>Left</headerHorizontalAlign>
     <showInFooter>true</showInFooter>
     <extInfo xsi:type="form:GanttChartFieldExtInfo">
-      <handlers>
-        <event>Selection</event>
-        <name>ДиаграммаВыбор</name>
-      </handlers>
       <autoTable>
         <name>ДиаграммаТаблица</name>
         <id>40</id>
@@ -352,11 +348,10 @@
       <common>true</common>
     </userVisible>
     <horizontalAlign>Left</horizontalAlign>
-    <autoFill>true</autoFill>
   </autoCommandBar>
   <handlers>
-    <event>OnOpen</event>
-    <name>ПриОткрытии</name>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
   </handlers>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
@@ -402,6 +397,13 @@
     </edit>
     <extInfo xsi:type="form:GanttChartExtInfo"/>
   </attributes>
+  <parameters>
+    <name>АдресВременногоХранилища</name>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </parameters>
   <commandInterface>
     <navigationPanel/>
     <commandBar/>

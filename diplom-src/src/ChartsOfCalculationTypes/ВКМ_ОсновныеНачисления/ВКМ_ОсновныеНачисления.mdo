@@ -36,6 +36,8 @@
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
+  <dependenceOnCalculationTypes>OnActionPeriod</dependenceOnCalculationTypes>
+  <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</baseCalculationTypes>
   <actionPeriodUse>true</actionPeriodUse>
   <predefined>
     <items id="48d8b7c4-c075-44f8-8f7b-1047d276f929">
@@ -52,6 +54,7 @@
       <code xsi:type="core:StringValue">
         <value>2</value>
       </code>
+      <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</base>
     </items>
   </predefined>
 </mdclass:ChartOfCalculationTypes>

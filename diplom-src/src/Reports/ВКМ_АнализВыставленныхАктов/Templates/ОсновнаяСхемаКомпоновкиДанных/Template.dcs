@@ -15,27 +15,46 @@
 			<field>Договор</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаКОплатеОборот</dataPath>
-			<field>СуммаКОплатеОборот</field>
+			<dataPath>СуммаКОплате</dataPath>
+			<field>СуммаКОплате</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма к оплате</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПоАкту</dataPath>
+			<field>СуммаПоАкту</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма по акту</v8:content>
+				</v8:item>
+			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ВКМ_ОбслуживаниеКлиента.Клиент,
-	ВКМ_ОбслуживаниеКлиента.Договор,
-	МАКСИМУМ(ВКМ_ВыполненныеКлиентуРаботыОбороты.СуммаКОплатеОборот) КАК СуммаКОплатеОборот
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.Клиент,
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.Договор,
+	ВКМ_ВыполненныеКлиентуРаботыОбороты.СуммаКОплатеОборот КАК СуммаКОплате,
+	ВКМ_СозданныеАктыУслугОбороты.СуммаОборот КАК СуммаПоАкту
 ИЗ
-	Документ.ВКМ_ОбслуживаниеКлиента КАК ВКМ_ОбслуживаниеКлиента
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВКМ_ВыполненныеКлиентуРаботы.Обороты(&amp;НачалоПериода, &amp;КонецПериода,,) КАК
-			ВКМ_ВыполненныеКлиентуРаботыОбороты
-		ПО ВКМ_ОбслуживаниеКлиента.Клиент = ВКМ_ВыполненныеКлиентуРаботыОбороты.Клиент
-		И ВКМ_ОбслуживаниеКлиента.Договор = ВКМ_ВыполненныеКлиентуРаботыОбороты.Договор
-СГРУППИРОВАТЬ ПО
-	ВКМ_ОбслуживаниеКлиента.Договор,
-	ВКМ_ОбслуживаниеКлиента.Клиент</query>
+	РегистрНакопления.ВКМ_ВыполненныеКлиентуРаботы.Обороты(&amp;НачалоПериода, &amp;КонецПериода,,) КАК
+		ВКМ_ВыполненныеКлиентуРаботыОбороты
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ВКМ_СозданныеАктыУслуг.Обороты(&amp;НачалоПериода, &amp;КонецПериода,,) КАК
+			ВКМ_СозданныеАктыУслугОбороты
+		ПО ВКМ_ВыполненныеКлиентуРаботыОбороты.Клиент = ВКМ_СозданныеАктыУслугОбороты.Клиент
+		И ВКМ_ВыполненныеКлиентуРаботыОбороты.Договор = ВКМ_СозданныеАктыУслугОбороты.Договор</query>
 	</dataSet>
 	<totalField>
-		<dataPath>СуммаКОплатеОборот</dataPath>
-		<expression>Сумма(СуммаКОплатеОборот)</expression>
+		<dataPath>СуммаКОплате</dataPath>
+		<expression>Сумма(СуммаКОплате)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПоАкту</dataPath>
+		<expression>Сумма(СуммаПоАкту)</expression>
 	</totalField>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -80,13 +99,10 @@
 					<dcsset:field>Договор</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаКОплатеОборот</dcsset:field>
-					<dcsset:lwsTitle>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Сумма к оплате</v8:content>
-						</v8:item>
-					</dcsset:lwsTitle>
+					<dcsset:field>СуммаКОплате</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПоАкту</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>

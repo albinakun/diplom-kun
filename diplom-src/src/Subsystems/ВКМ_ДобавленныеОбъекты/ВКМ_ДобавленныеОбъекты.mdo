@@ -56,4 +56,5 @@
   <content>Role.ВКМ_МассовоеСозданиеАктов</content>
   <content>Role.ВКМ_НачислениеЗарплаты</content>
   <content>Role.ВКМ_ВыработкаСпециалиста</content>
+  <content>CommonModule.ВКМ_УправлениеДоступомИТ</content>
 </mdclass:Subsystem>
